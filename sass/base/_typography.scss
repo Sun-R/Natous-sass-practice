@@ -1,0 +1,59 @@
+.heading-primary {
+    color: $color-white;
+    text-transform: uppercase;
+    margin-bottom: 6rem;
+
+    &--main {
+        display: block;
+        font-size: 6rem;
+        font-weight: 400;
+        letter-spacing: 3.5rem;
+        animation: moveLeftIn;
+        /* 要跑的動畫名稱 */
+        animation-duration: 1.5s;
+        /* 動畫完成的秒數 */
+        animation-timing-function: ease-out;
+        /* 不同的功能 */
+        /* animation-delay: 3s;   <-----延遲3秒 */
+        /* animation-iteration-count: 3;    <------ 跑3次 */
+    }
+
+    &--sub {
+        display: block;
+        font-size: 2rem;
+        letter-spacing: 1.7rem;
+        animation: moveRightIn;
+        animation-duration: 1.5s;
+        animation-timing-function: ease-out;
+    }
+}
+
+.heading-secondary {
+    background-image: linear-gradient(to right, $color-main-light, $color-main-dark);
+    display: inline-block;
+    font-size: 3.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    -webkit-background-clip: text;
+    color: transparent;
+    transition: all 1s;
+
+    &:hover {
+        transform: skewY(2deg) skewX(10deg) scale(1.1);
+        text-shadow: 0 .5rem 2rem rgba(0, 0, 0, 0.4);
+    }
+}
+
+.heading-tertiary {
+    font-size: $font-default;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.paragraph {
+    font-size: $font-default;
+
+    &:not(:last-child) {
+        margin-bottom: 3rem;
+    }
+}

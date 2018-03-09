@@ -1,0 +1,80 @@
+.btn {
+    &:link,
+    &:visited {
+        border-radius: 10rem;
+        padding: 1rem 4rem;
+        display: inline-block;
+        text-decoration: none;
+        text-transform: uppercase;
+        transition: all 0.2s;
+        position: relative;
+    }
+
+    &:hover {
+        transform: translateY(-.3rem);
+        box-shadow: 0 1.5rem 2rem rgba(0, 0, 0, 0.2);
+
+        &::after {
+            transform: scaleX(1.4) scaleY(1.6);
+            opacity: 0;
+        }
+    }
+
+    &:active {
+        transform: translateY(-1px);
+        box-shadow: 0 0.8rem 1rem rgba(0, 0, 0, 0.2);
+    }
+
+    &::after {
+        content: "";
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        border-radius: 10rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transition: all 0.4s;
+    }
+
+    &--white {
+        background-color: $color-white;
+        color: $color-gray;
+
+        &::after {
+            background-color: $color-white;
+        }
+    }
+
+    &--animated {
+        animation: moveBottomIn 1.5s ease-out 0.8s;
+        /*依序是 動畫名 執行時間 執行方式 延遲時間*/
+        animation-fill-mode: backwards;
+        /*將還沒做動畫的元素設為動畫的初始值(0%)*/
+    }
+}
+
+.btn-text {
+    &:link,
+    &:visited {
+        text-decoration: none;
+        color: $color-main;
+        border-bottom: 2px solid $color-main;
+        padding: 3px;
+        display: inline-block;
+        transition: all .5s;
+    }
+
+    &:hover {
+        color: $color-white;
+        background-color: $color-main;
+        transform: translateY(-5px);
+        box-shadow: 0 1rem 2rem rgba(#000000, 0.15);
+    }
+
+    &:active {
+        transform: translateY(0px);
+        box-shadow: 0 .5rem 1rem rgba(#000000, 0.15);
+    }
+}
