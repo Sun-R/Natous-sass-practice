@@ -1,0 +1,146 @@
+.card {
+    perspective: 150rem;
+    -moz-perspective: 150rem;
+    position: relative;
+    height: 50rem;
+
+    // BACK AND FRONT CARD
+    &__side {
+        height: 50rem;
+        font-size: 2rem;
+        transition: all .8s ease;
+        position: absolute;
+        top:0;
+        left: 0;
+        backface-visibility: hidden;
+        width: 100%;
+        box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.5);
+        border-radius: 3px;
+
+
+        &--front {
+            background-color: $color-white;
+        }
+
+        &--back {
+            transform: rotateY(180deg);
+
+            &-1 {
+                background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark);
+            }
+
+            &-2 {
+                background-image: linear-gradient(to right bottom, $color-tertiary-light, $color-tertiary-dark);
+            }
+
+            &-3 {
+                background-image: linear-gradient(to right bottom, $color-main-light, $color-main-dark);
+            }
+        }
+
+    }
+
+    &:hover &__side--front {
+        transform: rotateY(-180deg);
+    }
+
+    &:hover &__side--back {
+        transform: rotateY(0);
+    }
+
+    // FRONT CARD STYLE
+    &__picture {
+        height: 20rem;
+        background-size: cover;
+        background-blend-mode: color;
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+
+        &-1 {
+            background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark), url("../img/nat-5.jpg");
+        }
+
+        &-2 {
+            background-image: linear-gradient(to right bottom, $color-tertiary-light, $color-tertiary-dark), url("../img/nat-6.jpg");
+        }
+
+        &-3 {
+            background-image: linear-gradient(to right bottom, $color-main-light, $color-main-dark), url("../img/nat-7.jpg");
+        }
+    }
+
+    &__heading {
+        color: $color-white;
+        font-size: 2.8rem;
+        text-transform: uppercase;
+        width: 60%;
+        position:absolute;
+        top: 10rem;
+        right: 1.8rem;
+        text-align: right;
+        font-weight: 300;
+    }
+
+    &__heading-span {
+        padding: 1rem 1.5rem;
+        -webkit-box-decoration-break: clone;
+        box-decoration-break: clone;
+
+        &-1 {
+            background-image: linear-gradient(to right bottom, rgba($color-secondary-light, .85), rgba($color-secondary-dark, .85));
+        }
+        &-2 {
+            background-image: linear-gradient(to right bottom, rgba($color-tertiary-light, .85), rgba($color-tertiary-dark, .85));
+        }
+        &-3 {
+            background-image: linear-gradient(to right bottom, rgba($color-main-light, .85), rgba($color-main-dark, .85));
+        }
+    }
+
+    &__detail {
+        padding: 3rem;
+
+        ul {
+            list-style: none;
+            font-size: 1.5rem;
+            width: 75%;
+            margin: 0 auto;
+
+            li {
+                padding: 1rem;
+                text-align: center;
+
+                &:not(:last-child) {
+                    border-bottom: 1px solid $color-gray-light-2;
+                }
+            }
+        }
+    }
+
+    // BACK CARD style
+    &__back-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 90%;
+        text-align: center;
+    }
+
+    &__back-box {
+        text-align: center;
+        color: $color-white;
+        margin-bottom: 6rem;
+    }
+
+    &__back-only {
+        text-transform: uppercase;
+    }
+
+    &__back-price {
+        font-size: 8rem;
+        font-weight: 300;
+    }
+}

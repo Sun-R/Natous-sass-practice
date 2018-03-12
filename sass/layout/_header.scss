@@ -10,6 +10,7 @@
     background-size: cover;
     position: relative;
     /*切片效果     從左上為起點計算XY軸值*/
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
     clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
 
     &__logo-box {

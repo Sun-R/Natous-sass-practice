@@ -47,6 +47,15 @@
         }
     }
 
+    &--green {
+        background-color: $color-main;
+        color: $color-white;
+
+        &::after {
+            background-color: $color-main;
+        }
+    }
+
     &--animated {
         animation: moveBottomIn 1.5s ease-out 0.8s;
         /*依序是 動畫名 執行時間 執行方式 延遲時間*/
