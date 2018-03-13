@@ -43,7 +43,8 @@ body {
   color: #777;
   font-weight: 400;
   line-height: 1.7;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  padding: 3rem; }
 
 .heading-primary {
   color: #fff;
@@ -105,11 +106,28 @@ body {
 .u-margin-b-small {
   margin-bottom: 1.5rem; }
 
+.u-margin-b-huge {
+  margin-bottom: 15rem; }
+
 .u-margin-t-big {
   margin-top: 8rem; }
 
 .u-margin-t-huge {
   margin-top: 10rem; }
+
+.bg-video {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: .15;
+  z-index: -1;
+  overflow: hidden; }
+  .bg-video__content {
+    height: 100%;
+    width: 100%;
+    object-fit: cover; }
 
 .btn:link, .btn:visited {
   border-radius: 10rem;
@@ -317,6 +335,52 @@ body {
     transform: translateY(-1.5rem) scale(1.05);
     box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.4); }
 
+.story {
+  width: 90%;
+  font-size: 1.6rem;
+  margin: 0 auto;
+  border-radius: 3px;
+  padding: 6rem;
+  padding-left: 9rem;
+  box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.4);
+  background-color: rgba(255, 255, 255, 0.6);
+  transform: skewX(-12deg); }
+  .story__shape {
+    height: 15rem;
+    width: 15rem;
+    background-color: red;
+    float: left;
+    -webkit-shape-outside: circle(45% at 50% 50%);
+    shape-outside: circle(45% at 50% 50%);
+    -webkit-clip-path: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%);
+    transform: translateX(-3rem) skewX(12deg);
+    position: relative; }
+  .story__text {
+    transform: skewX(12deg); }
+  .story__img {
+    height: 100%;
+    transform: translateX(-3rem) scale(1.4);
+    transition: all .5s;
+    backface-visibility: hidden; }
+  .story__caption {
+    color: #fff;
+    font-size: 1.7rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 20%);
+    text-transform: uppercase;
+    opacity: 0;
+    transition: all .5s; }
+  .story:hover .story__caption {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+    backface-visibility: hidden; }
+  .story:hover .story__img {
+    transform: translateX(-3rem) scale(1.05);
+    filter: brightness(80%) blur(2px); }
+
 .row {
   max-width: 114rem;
   margin: 0 auto; }
@@ -383,3 +447,7 @@ body {
   background-color: #f7f7f7;
   padding: 25rem 0 10rem 0;
   margin-top: -10rem; }
+
+.section-story {
+  position: relative;
+  padding: 10rem; }
