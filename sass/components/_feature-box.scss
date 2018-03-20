@@ -7,6 +7,10 @@
     border-radius: 3px;
     transition: transform .3s;
 
+    @include respond(tab-port) {
+        padding: 3rem;
+    }
+
     &__icon {
         font-size: 6rem;
         background-image: linear-gradient(to right, $color-main-light, $color-main-dark);

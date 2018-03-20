@@ -1,5 +1,5 @@
 .card {
-    perspective: 150rem;
+    perspective: 150rem;   //視線距離
     -moz-perspective: 150rem;
     position: relative;
     height: 50rem;
@@ -142,5 +142,62 @@
     &__back-price {
         font-size: 8rem;
         font-weight: 300;
+    }
+}
+
+
+@include respond(tab-port) {
+    .card {
+        height: auto;
+        border-radius: 3px;
+        background-color: $color-white;
+        // BACK AND FRONT CARD
+        &__side {
+            height: auto;
+            position: relative;
+            box-shadow: 0 0 0;
+
+            &--back {
+                transform: rotateY(0deg);
+                -webkit-clip-path: polygon(0 15%, 100% 0%, 100% 100%, 0% 100%);
+                clip-path: polygon(0 15%, 100% 0%, 100% 100%, 0% 100%);
+                width: 100%
+            }
+
+        }
+
+        &:hover &__side--front {
+            transform: rotateY(0deg);
+        }
+
+        // FRONT CARD STYLE
+
+        &__detail {
+            padding: 1rem;
+        }
+
+        // BACK CARD style
+        &__back-container {
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+            transform: translate(0);
+            text-align: center;
+            padding: 6rem 4rem;
+        }
+
+        &__back-box {
+            margin-bottom: 6rem;
+        }
+
+        &__back-only {
+            text-transform: uppercase;
+        }
+
+        &__back-price {
+            font-size: 6rem;
+            margin-bottom: -6rem;
+        }
     }
 }

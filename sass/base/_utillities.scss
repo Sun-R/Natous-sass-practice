@@ -1,6 +1,12 @@
 .u-text-center { text-align: center; }
 
-.u-margin-b-big { margin-bottom: 8rem; }
+.u-margin-b-big {
+    margin-bottom: 8rem;
+
+    @include respond(tab-port) {
+        margin-bottom: 6rem;
+    }
+}
 .u-margin-b-medium { margin-bottom: 3.5rem; }
 .u-margin-b-small { margin-bottom: 1.5rem; }
 .u-margin-b-huge { margin-bottom: 15rem; }
